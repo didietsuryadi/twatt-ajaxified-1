@@ -15,36 +15,19 @@
         <h1><b>My TimeLine</b></h1>
         <label for="status">Status</label>
         <br>
-        <input type="text" class="form-control" name="status" v-model="status">
+        <input type="text" class="form-control" name="status" id="status">
         <br>
         <br>
-        <button class="btn btn-info pull-right" type="button" v-on:click="addTwitt()" name="button">Tweet</button>
+        <button class="btn btn-info pull-right" type="button" onclick="addTwitt()" name="button">Tweet</button>
         <br>
       </div>
     </div>
     <h2>My TimeLine</h2>
     <br>
-    <ul class="timeline">
-      <li v-for="data in tweets">
-        <div class="timeline-badge">
-          <a><i class="fa fa-circle" id=""></i></a>
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4>{{ data.user.name }}</h4>
-          </div>
-          <div class="timeline-body">
-            <p>{{ data.text }}</p>
-          </div>
-          <div class="timeline-footer">
-            <p class="text-right">{{ data.created_at }}</p>
-
-          </div>
-        </div>
-      </li>
+    <ul id="timeline">
+    </ul>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

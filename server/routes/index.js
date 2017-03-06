@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.send('index');
 });
 
-router.post('/newtwatt', controllers.posting)
+router.post('/twatt', controllers.posting)
 router.get('/twatt',controllers.feeder)
 
 module.exports = router;
