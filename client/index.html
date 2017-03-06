@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tutuwitt</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container" id="root">
+    <br>
+    <div class="row">
+      <div class="centered">
+        <h1><b>My TimeLine</b></h1>
+        <label for="status">Status</label>
+        <br>
+        <input type="text" class="form-control" name="status" v-model="status">
+        <br>
+        <br>
+        <button class="btn btn-info pull-right" type="button" v-on:click="addTwitt()" name="button">Tweet</button>
+        <br>
+      </div>
+    </div>
+    <h2>My TimeLine</h2>
+    <br>
+    <ul class="timeline">
+      <li v-for="data in tweets">
+        <div class="timeline-badge">
+          <a><i class="fa fa-circle" id=""></i></a>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>{{ data.user.name }}</h4>
+          </div>
+          <div class="timeline-body">
+            <p>{{ data.text }}</p>
+          </div>
+          <div class="timeline-footer">
+            <p class="text-right">{{ data.created_at }}</p>
+
+          </div>
+        </div>
+      </li>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

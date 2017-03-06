@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var controllers = require('controllers/twitter')
+var controllers = require('../controllers/twitter')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.send('index');
