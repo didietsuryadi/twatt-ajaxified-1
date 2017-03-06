@@ -46,6 +46,24 @@ function addTwitt(){
       status : $('#status').val()
     },
     success: function (data) {
+      $('#status').val('')
+      var row = `<li>
+        <div class="timeline-badge">
+          <a><i class="fa fa-circle" id=""></i></a>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>${data.user.name}</h4>
+          </div>
+          <div class="timeline-body">
+            <p>${data.text}</p>
+          </div>
+          <div class="timeline-footer">
+            <p class="text-right">${data.created_at}</p>
+          </div>
+        </div>
+      </li>`
+      $('#timeline').prepend(row)
       loadTwitt()
     },
     fail: function (err) {
